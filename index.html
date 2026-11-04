@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>d/code | Tech Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+  /* ===== Variables (ranglarni shu yerdan o'zgartirasiz) ===== */
+:root {
+  --bg: #2a3a62;
+  --bg-dark: #223052;
+  --cream: #fff3df;
+  --accent: #f26b6b;
+  --muted: #a9b4cf;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 6%;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+  margin-right: auto;
+  margin-left: 48px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.nav a:hover,
+.nav-contact:hover {
+  color: var(--accent);
+}
+
+.nav-contact {
+  font-size: 0.9rem;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  background: #e45555;
+  transform: translateY(-2px);
+}
+
+.btn.small {
+  padding: 8px 18px;
+  font-size: 0.8rem;
+}
+
+/* ===== Hero ===== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 6% 100px;
+  min-height: 70vh;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+.hero-visual {
+  position: relative;
+  height: 380px;
+}
+
+.circle {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent), #b83f4a);
+}
+
+.swirl {
+  position: absolute;
+  left: -20%;
+  bottom: 0;
+  width: 120%;
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 80px 6%;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+}
+
+/* ===== Service cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-dark);
+  padding: 28px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* ===== Team ===== */
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+}
+
+.member {
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.member h3 {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.member p {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ===== Testimonial ===== */
+.testimonial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.quote {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.author {
+  color: var(--muted);
+}
+
+.quote-image {
+  height: 240px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--bg-dark), #111a33);
+  border: 2px solid var(--accent);
+}
+
+/* ===== Contact form ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 480px;
+}
+
+.form input,
+.form textarea {
+  padding: 14px;
+  border: 1px solid #44558a;
+  border-radius: 4px;
+  background: var(--bg-dark);
+  color: var(--cream);
+  font-family: inherit;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid var(--accent);
+}
+
+.form .btn {
+  align-self: flex-start;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid #44558a;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .hero,
+  .testimonial {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    height: 260px;
+  }
+
+  .circle {
+    width: 200px;
+    height: 200px;
+  }
+}
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">d<span>/</span>code</a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#team">Team</a>
+      <a href="#testimonial">Testimonial</a>
+    </nav>
+    <a href="#contact" class="nav-contact">Contact</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>We <span class="accent">design</span> your feelings, <span class="accent">code</span> emotions</h1>
+        <p>We talented people with latest technologies can help you to fulfil your dream.</p>
+        <a href="#services" class="btn">All work</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="circle"></div>
+        <svg class="swirl" viewBox="0 0 600 200" fill="none">
+          <path d="M0 160 C 80 20, 160 20, 220 110 S 340 190, 420 90 S 520 20, 600 80"
+                stroke="#fff3df" stroke-width="2"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <h2>Our services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Real AR</h3>
+          <p>Real estate virtual solution for showing homes before they are built.</p>
+          <a href="#contact" class="btn small">Learn more</a>
+        </article>
+        <article class="card">
+          <h3>Web design</h3>
+          <p>Clean, fast websites that match your brand and work on every screen.</p>
+          <a href="#contact" class="btn small">Learn more</a>
+        </article>
+        <article class="card">
+          <h3>Mobile apps</h3>
+          <p>iOS and Android apps built with modern tools and tested with real users.</p>
+          <a href="#contact" class="btn small">Learn more</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section" id="team">
+      <h2>Our talents</h2>
+      <div class="team">
+        <div class="member">
+          <div class="avatar">AK</div>
+          <h3>Akmal Karimov</h3>
+          <p>Frontend developer</p>
+        </div>
+        <div class="member">
+          <div class="avatar">MN</div>
+          <h3>Malika Nazarova</h3>
+          <p>UI/UX designer</p>
+        </div>
+        <div class="member">
+          <div class="avatar">JS</div>
+          <h3>Jasur Sodiqov</h3>
+          <p>Backend developer</p>
+        </div>
+        <div class="member">
+          <div class="avatar">DR</div>
+          <h3>Dilnoza Rustamova</h3>
+          <p>Project manager</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section testimonial" id="testimonial">
+      <div class="quote-box">
+        <span class="quote-mark">“</span>
+        <p class="quote">They worked so hard to fulfil our goal.</p>
+        <p class="author">Sardor, startup founder</p>
+      </div>
+      <div class="quote-image" aria-hidden="true"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <h2>Schedule an appointment</h2>
+      <form class="form" onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Email address" required>
+        <textarea rows="4" placeholder="Tell us about your project"></textarea>
+        <button type="submit" class="btn">Send request</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 d/code. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
